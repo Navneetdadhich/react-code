@@ -1,15 +1,22 @@
-import React from 'react'
+import React, {useState}from 'react'
 import Products from './Products';
 
 function App() {
+  // let marks = 80
+  const [marks, setMarks] = useState(0)
   return (
-    <div className="w-full h-screen bg-gray-500 text-center">
-      <h1 className="text-neutral-50">hy nav</h1>
-     
-      <div>
-        <Products />
-      </div>
-    </div>
+    <>
+    <Products/>
+    <div className="text-red-400 mx-14">your marks is {marks}</div>
+
+    <button onClick={()=>{
+      setMarks(marks+1);
+    }} className="mx-10 border-slate-950 px-2 border-2 rounded-md my-2">add</button>
+
+<button onClick={()=>{
+      setMarks(marks-1);
+    }} className="mx-10 border-slate-950 px-2 border-2 rounded-md my-2">subtract</button>
+    </>
     
   );
 }
